@@ -1,0 +1,25 @@
+# Core dependencies for Zomato Data Lake Project
+
+# Apache Spark
+pyspark==3.5.0
+
+# Google Cloud SDKs
+google-cloud-storage==2.18.2
+google-cloud-bigquery==3.25.0
+
+# Data handling and utilities
+pandas==2.2.3
+numpy==1.26.4
+
+# Optional: For local testing and logging
+pyarrow==16.1.0
+protobuf==4.25.3
+
+🧠 Explanation of each
+Package	Purpose
+pyspark	Core library for running Spark transformations
+google-cloud-storage	Connects to GCS to read/write files
+google-cloud-bigquery	Loads or queries data in BigQuery
+pandas / numpy	Optional — used for local data validation or debugging
+pyarrow	Enables efficient Parquet read/write support
+protobuf	Required for some GCP SDKs (dependency compatibility)
