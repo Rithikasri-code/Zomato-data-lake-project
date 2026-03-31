@@ -1,96 +1,59 @@
-# Zomato-data-lake-project
-End-to-end Zomato Data Lake built on Google Cloud Platform using Spark, BigQuery, and Cloud Storage for scalable analytics.
-#gcp #spark #bigquery #datalake #dataengineering #zomato
+# Zomato Data Lake Project
 
-# 🍴 Zomato Data Lake Project using Apache Spark, GCS, and BigQuery
+An end-to-end data pipeline built on Google Cloud Platform that ingests, processes, and analyzes Zomato restaurant data at scale. This project was designed to explore how modern data lake architectures work in practice, using real-world tools like Apache Spark and BigQuery.
 
-An end-to-end data lake built using **Google Cloud Platform**, **Apache Spark**, and **BigQuery** to process, clean, and analyze Zomato restaurant data efficiently at scale.
+## What This Project Does
 
----
+Raw Zomato datasets are uploaded to Google Cloud Storage, processed and cleaned using PySpark, and finally loaded into BigQuery where they can be queried for analytics and reporting. The pipeline is designed to be scalable and can be connected to BI tools like Looker Studio for visualization.
 
-## 🧩 Project Overview
+## Architecture
 
-The project demonstrates how to design a **data lake architecture** where raw Zomato datasets are ingested into **Google Cloud Storage (GCS)**, processed using **Apache Spark**, and loaded into **BigQuery** for analytical queries and reporting.
+The data flows through three stages. First, raw CSV files (orders and restaurant data) land in a Cloud Storage bucket. From there, a PySpark job handles the cleaning and transformation, outputting structured data into a processed zone. That processed data is then loaded into BigQuery, where it becomes available for analytical queries.
 
----
+## Tools and Technologies
 
-## 🏗️ Architecture
+- **Cloud Platform:** Google Cloud Platform (GCP)
+- **Storage:** Google Cloud Storage (GCS)
+- **Processing:** Apache Spark (PySpark) via Dataproc
+- **Data Warehouse:** BigQuery
+- **Visualization:** Looker Studio / Power BI
+- **Language:** Python
 
-[Zomato Dataset]
-↓
-[Google Cloud Storage - Raw Zone]
-↓
-[Apache Spark on Dataproc / PySpark]
-↓
-[Transformed Data - Processed Zone]
-↓
-[BigQuery - Analytics Layer]
-
-
----
-
-## ⚙️ Tools & Technologies
-
-| Category | Tool |
-|-----------|------|
-| Cloud Platform | Google Cloud Platform (GCP) |
-| Storage | Google Cloud Storage (GCS) |
-| Processing | Apache Spark (PySpark) |
-| Data Warehouse | BigQuery |
-| Visualization | Looker Studio / Power BI |
-| Language | Python |
-
----
-
-## 📂 Project Structure
-
+## Project Structure
+```
 Zomato-DataLake-Project/
-│
 ├── data/
-│ ├── raw/ # Raw Zomato dataset (CSV)
-│ ├── processed/ # Transformed data ready for BigQuery
-│
+│   ├── raw/                    # Raw Zomato CSV files
+│   └── processed/              # Cleaned data ready for BigQuery
 ├── scripts/
-│ ├── ingestion_spark.py # Ingest data from GCS to Spark
-│ ├── transform_spark.py # Data cleaning and transformation
-│ ├── load_to_bigquery.py # Load final data into BigQuery
-│
+│   ├── ingestion_spark.py      # Reads raw data from GCS into Spark
+│   ├── transform_spark.py      # Cleaning and transformation logic
+│   └── load_to_bigquery.py     # Loads final output into BigQuery
 ├── notebooks/
-│ ├── zomato_etl.ipynb # End-to-end PySpark ETL notebook
-│
+│   └── zomato_etl.ipynb        # Full PySpark ETL walkthrough
 ├── requirements.txt
-├── README.md
-└── LICENSE
+└── README.md
+```
 
+## Setup
 
----
-
-## 🚀 Key Features
-
-- ✅ Data ingestion from **Google Cloud Storage**
-- ✅ Transformation & cleaning using **PySpark**
-- ✅ Analytical data loaded into **BigQuery**
-- ✅ Scalable & serverless data pipeline
-- ✅ Ready for BI tools like **Looker Studio**
-
----
-
-## 🧰 Setup Instructions
-
-### 1️⃣ Clone this repository
-```bash
-git clone https://github.com/yourusername/Zomato-data-lake-project.git
+Clone the repository and install the dependencies:
+```
+git clone https://github.com/Rithikasri-code/Zomato-data-lake-project.git
 cd Zomato-data-lake-project
+pip install -r requirements.txt
+```
 
-👩‍💻 Author
+You will also need a GCP project with Cloud Storage, Dataproc, and BigQuery enabled. Make sure your service account has the appropriate permissions before running the ingestion script.
+
+## Author
 
 Rithika Sri
-📧 rithikasri739@gmail.com
+rithikasri739@gmail.com
+[LinkedIn](https://www.linkedin.com/in/rithika-sri-p-585b59328)
 
-🌐 linkedIn - https://www.linkedin.com/in/rithika-sri-p-585b59328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+## License
 
-📜 License
-
-Licensed under the MIT License.
+This project is licensed under the MIT License.
 
 
