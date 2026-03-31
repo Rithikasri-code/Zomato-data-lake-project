@@ -52,8 +52,6 @@ Rithika Sri
 rithikasri739@gmail.com
 [LinkedIn](https://www.linkedin.com/in/rithika-sri-p-585b59328)
 
-## License
 
-This project is licensed under the MIT License.
 
 
